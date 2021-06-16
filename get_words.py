@@ -19,7 +19,7 @@ def get_info(word):
     for antonym in antonyms_list[3:7]:
         antonyms += (antonym + ", ")
 
-    return synonyms + "\n\n" + antonyms
+    return "Synonyms: "+ synonyms + "\n\n" + "Antonyms: " + antonyms
 def get_word(path):
     words_data = open(path, "r")
     words = words_data.read().split("\n")
@@ -32,10 +32,9 @@ def get_path():
 
     return full_path
 
-if __name__ =="__main__":
-    path = get_path()
-    print(get_word(path))
-    print(get_info(get_word(path)))
+path = get_path()
+random_word = get_word(path)
+info = get_info(random_word)
     
     
 
