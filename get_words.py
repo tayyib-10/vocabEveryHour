@@ -1,15 +1,30 @@
 from os import getcwd
+import json
 from random import choice
-from vocabulary.vocabulary import Vocabulary as vb
+from PyDictionary import PyDictionary
+
 
 def get_info(word):
-    pass
+    dictionary = PyDictionary()
+    
+    # gets synonyms
+    synonyms_list = dictionary.synonym(word)
+    synonyms = ""
+    for synonym in synonyms_list[3:7]:
+        synonyms += (synonym + ", ")
+    
+    # get antonyms
+    antonyms_list = dictionary.antonym(word)
+    antonyms = ""
+    for antonym in antonyms_list[3:7]:
+        antonyms += (antonym + ", ")
 
-def get_words(path):
+    return synonyms + "\n\n" + antonyms
+def get_word(path):
     words_data = open(path, "r")
     words = words_data.read().split("\n")
     random_word = choice(words)
-    print(random_word)
+    return random_word
 
 def get_path():
     working_dir_path = getcwd().replace("\\", "\\\\")
@@ -19,6 +34,10 @@ def get_path():
 
 if __name__ =="__main__":
     path = get_path()
+    print(get_word(path))
+    print(get_info(get_word(path)))
+    
+    
 
-    print(vb.synonym(get_words(path))
+    
     
