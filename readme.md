@@ -7,3 +7,14 @@ PROJECT WORKFLOW:
             a new word every hour
             start the the program when i open the desktop
         push it to github
+
+
+
+
+
+
+
+
+
+
+
