@@ -1,5 +1,5 @@
 -ignore this
-    PROJECT WORKFLOW:
+PROJECT WORKFLOW:
 
         python vocab library
         python notification / how to send notification
